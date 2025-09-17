@@ -3,10 +3,13 @@ const { autoUpdater } = require('electron-updater');
 
 app.on('ready', () => {
   const win = new BrowserWindow({
-    width: 100,
-     height: 100,
+    width: 250,
+     height: 250,
      frame: false,
     });
 
   autoUpdater.checkForUpdatesAndNotify();
+  autoUpdater.on('update-available', () => {
+win.loadFile('update.html');
+  });
 });
