@@ -1,0 +1,74 @@
+{
+  "name": "devapp",
+  "version": "1.0.1",
+  "description": "devapp",
+  "main": "main.js",
+  "keywords": [
+    "devapp",
+    "electron",
+    "desktop",
+    "cross-platform"
+  ],
+  "author": "Filutkowski, MCF, Kachuch, Wafel, Konpak and LALA",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "electron": "^38.1.1",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "electron-updater": "^6.6.2"
+  },
+  "build": {
+    "appId": "com.mcf.devapp",
+    "productName": "DevApp",
+    "copyright": "Copyright © 2025 Filutkowski & Team",
+    "directories": {
+      "output": "dist"
+    },
+    "asar": false,
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "filutkowski",
+        "repo": "devapp"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable",
+        "msi",
+        "appx",
+        "zip"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip",
+        "pkg",
+        "mas"
+      ],
+      "icon": "build/icon.icns",
+      "category": "public.app-category.developer-tools"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm",
+        "snap",
+        "flatpak",
+        "tar.gz"
+      ],
+      "icon": "build/icons",
+      "category": "Development"
+    }
+  }
+}

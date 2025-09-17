@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Updating...</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d0d0d;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 16px;
+      color: #cccccc;
+    }
+
+    .loader {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin: 40px 0;
+    }
+
+    .circle {
+      position: absolute;
+      border: 6px solid transparent;
+      border-top-color: #0078d7;
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      animation: spin 1.2s linear infinite;
+    }
+
+    .circle::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #0d0d0d;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #0078d7;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🔄 Updating Application</h1>
+  <div class="loader">
+    <div class="circle"></div>
+  </div>
+  <p>Please wait while the latest version is being installed.</p>
+</body>
+</html>
